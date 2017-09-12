@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="上善如水">
 <meta property="og:description" content="概述主要介绍如何云的Pages中部署Hexo……">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-12T13:00:25.348Z">
+<meta property="og:updated_time" content="2017-09-12T13:12:43.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客 | 在码云中部署Hexo">
 <meta name="twitter:description" content="概述主要介绍如何云的Pages中部署Hexo……">
@@ -383,8 +383,8 @@
 <p>概述<br>主要介绍如何云的Pages中部署Hexo……</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="在码云中新建Pages坝目"><a href="#在码云中新建Pages坝目" class="headerlink" title="在码云中新建Pages坝目"></a>在码云中新建Pages坝目</h1><p>相关Pages项目在码云上的创建教程如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http:<span class="comment">//git.mydoc.io/%3Ft%3Dl54711?t=154714</span></div><div class="line"> <span class="comment">//备用 ： https://www.oschina.net/news/73980/gitosc-pages</span></div></pre></td></tr></table></figure></p>
-<p>根据上面教程在码云中创建ragawa/ragawa项目，Pages项目创建结束后开始安装Hexo 此时Pages项目可用<a href="http://ragawa.oschina.io地址访问" target="_blank" rel="external">http://ragawa.oschina.io地址访问</a></p>
+<h1 id="在码云中新建Pages项目"><a href="#在码云中新建Pages项目" class="headerlink" title="在码云中新建Pages项目"></a>在码云中新建Pages项目</h1><p>相关Pages项目在码云上的创建教程如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http:<span class="comment">//git.mydoc.io/%3Ft%3Dl54711?t=154714</span></div><div class="line"> <span class="comment">//备用 ： https://www.oschina.net/news/73980/gitosc-pages</span></div></pre></td></tr></table></figure></p>
+<p>根据上面教程在码云中创建ragawa/ragawa项目，Pages项目创建结束后开始安装Hexo。<br> 此时Pages项目可用 <a href="http://ragawa.oschina.io" target="_blank" rel="external">http://ragawa.oschina.io</a> 地址访问</p>
 <h1 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h1><p>在开始前，先检查电脑中是否已经安装下面的软件：</p>
 <ul>
 <li>Node.js</li>
@@ -396,6 +396,13 @@
 <h2 id="Node-js简明教程"><a href="#Node-js简明教程" class="headerlink" title="Node.js简明教程"></a>Node.js简明教程</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="comment">//hexo.io/zh-cn/docs/#安装-Node-js</span></div></pre></td></tr></table></figure>
 <h2 id="cnpm安装简明教程"><a href="#cnpm安装简明教程" class="headerlink" title="cnpm安装简明教程"></a>cnpm安装简明教程</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:<span class="comment">//npm.taobao.org/</span></div></pre></td></tr></table></figure>
 <h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<h1 id="初始化Hexo项目"><a href="#初始化Hexo项目" class="headerlink" title="初始化Hexo项目"></a>初始化Hexo项目</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init ragawa </div><div class="line">cd ragawa</div><div class="line">cnpm install</div></pre></td></tr></table></figure>
+<h1 id="第一次运行Hexo项目"><a href="#第一次运行Hexo项目" class="headerlink" title="第一次运行Hexo项目"></a>第一次运行Hexo项目</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+<p>启动浏览器，默认情况下,访问网址为：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
+<h1 id="下载Next主题"><a href="#下载Next主题" class="headerlink" title="下载Next主题"></a>下载Next主题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ragawa</div><div class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+<h1 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h1><p>与所有Hexo主题启用的模式一样。当克隆下载完成后，打开站点配置文件，找theme字段，并将其值更改为next.</p>
+<p>到此，Next主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前，我们最好使用hexo clean来清除Hexo的缓存。</p>
+<h1 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h1><h2 id="选择Scheme"><a href="#选择Scheme" class="headerlink" title="选择Scheme"></a>选择Scheme</h2><p> Scheme是Next提供的一种特性,借助于Scheme , Next提供了多种不同的外观。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#scheme: Muse</div><div class="line">#scheme: Mist</div><div class="line">scheme: Pisces</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -587,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在码云中新建Pages坝目"><span class="nav-number">1.</span> <span class="nav-text">在码云中新建Pages坝目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装准备"><span class="nav-number">2.</span> <span class="nav-text">安装准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git安装简明教程"><span class="nav-number">2.1.</span> <span class="nav-text">Git安装简明教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js简明教程"><span class="nav-number">2.2.</span> <span class="nav-text">Node.js简明教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cnpm安装简明教程"><span class="nav-number">2.3.</span> <span class="nav-text">cnpm安装简明教程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装 Hexo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在码云中新建Pages项目"><span class="nav-number">1.</span> <span class="nav-text">在码云中新建Pages项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装准备"><span class="nav-number">2.</span> <span class="nav-text">安装准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git安装简明教程"><span class="nav-number">2.1.</span> <span class="nav-text">Git安装简明教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js简明教程"><span class="nav-number">2.2.</span> <span class="nav-text">Node.js简明教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cnpm安装简明教程"><span class="nav-number">2.3.</span> <span class="nav-text">cnpm安装简明教程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化Hexo项目"><span class="nav-number">4.</span> <span class="nav-text">初始化Hexo项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一次运行Hexo项目"><span class="nav-number">5.</span> <span class="nav-text">第一次运行Hexo项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载Next主题"><span class="nav-number">6.</span> <span class="nav-text">下载Next主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启用主题"><span class="nav-number">7.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题设定"><span class="nav-number">8.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择Scheme"><span class="nav-number">8.1.</span> <span class="nav-text">选择Scheme</span></a></li></ol></li></ol></div>
             
 
           </div>
