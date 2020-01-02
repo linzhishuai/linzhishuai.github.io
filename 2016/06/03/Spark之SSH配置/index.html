@@ -15,11 +15,11 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
 
@@ -46,9 +46,9 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
@@ -114,7 +114,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/03/Spark之SSH配置/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/06/03/Spark之SSH配置/">
 
 
 
@@ -224,7 +224,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -241,7 +241,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
         
@@ -258,7 +258,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
         
@@ -275,7 +275,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -292,7 +292,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -344,16 +344,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/03/Spark之SSH配置/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/03/Spark之SSH配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ragawa"/>
-      <meta itemprop="description" content="一个可以承载记忆的地方"/>
-      <meta itemprop="image" content="/favicon/ragawa.png"/>
+      <meta itemprop="name" content="Ragawa">
+      <meta itemprop="description" content="一个可以承载记忆的地方">
+      <meta itemprop="image" content="/favicon/ragawa.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="上善如水"/>
+      <meta itemprop="name" content="上善如水">
     </span>
 
     
@@ -467,16 +467,16 @@
 <p>概述<br>这篇文章主要记录如何用SSH管理Spark集群：<br>1.笔者使用的操作系统环境为：Ubuntu14.04 LTS 64bit<br>2.测试集群中有1台Master，2台Worker</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="先检查SSH是否安装"><a href="#先检查SSH是否安装" class="headerlink" title="先检查SSH是否安装"></a>先检查SSH是否安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh localhost</div></pre></td></tr></table></figure>
-<h1 id="在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH"><a href="#在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH" class="headerlink" title="在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH"></a>在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install openssh-server</div></pre></td></tr></table></figure>
-<h1 id="设置Master与Worker的hostname"><a href="#设置Master与Worker的hostname" class="headerlink" title="设置Master与Worker的hostname"></a>设置Master与Worker的hostname</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gedit /etc/hostname</div><div class="line">//说明：修改hostname后，我们重启电脑，在终端中应该能看到形如ragawa@Master ragawa@Worker1 ragawa@Worker2 这样的提示符</div></pre></td></tr></table></figure>
-<h1 id="配置Msater的hosts"><a href="#配置Msater的hosts" class="headerlink" title="配置Msater的hosts"></a>配置Msater的hosts</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gedit /etc/hosts</div><div class="line">- 192.168.10.129    Master</div><div class="line">- 192.168.10.130    Worker1</div><div class="line">- 192.168.10.131    Worker2</div></pre></td></tr></table></figure>
-<h1 id="在Master中生成密钥"><a href="#在Master中生成密钥" class="headerlink" title="在Master中生成密钥"></a>在Master中生成密钥</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t dsa -P <span class="string">" -f ~/.ssh/id_dsa"</span></div></pre></td></tr></table></figure>
-<h1 id="查看生成的公钥与私钥"><a href="#查看生成的公钥与私钥" class="headerlink" title="查看生成的公钥与私钥"></a>查看生成的公钥与私钥</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./ssh </div><div class="line">ls</div><div class="line">// 说明：会出现如下两个文件 id_dsa  id_dsa.pub</div></pre></td></tr></table></figure>
+<h1 id="先检查SSH是否安装"><a href="#先检查SSH是否安装" class="headerlink" title="先检查SSH是否安装"></a>先检查SSH是否安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br></pre></td></tr></table></figure>
+<h1 id="在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH"><a href="#在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH" class="headerlink" title="在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH"></a>在键入上面命令后，如果有输出，则说明SSH已经正确安装，否则输入如下命令安装SSH</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
+<h1 id="设置Master与Worker的hostname"><a href="#设置Master与Worker的hostname" class="headerlink" title="设置Master与Worker的hostname"></a>设置Master与Worker的hostname</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gedit /etc/hostname</span><br><span class="line">//说明：修改hostname后，我们重启电脑，在终端中应该能看到形如ragawa@Master ragawa@Worker1 ragawa@Worker2 这样的提示符</span><br></pre></td></tr></table></figure>
+<h1 id="配置Msater的hosts"><a href="#配置Msater的hosts" class="headerlink" title="配置Msater的hosts"></a>配置Msater的hosts</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gedit /etc/hosts</span><br><span class="line">- 192.168.10.129    Master</span><br><span class="line">- 192.168.10.130    Worker1</span><br><span class="line">- 192.168.10.131    Worker2</span><br></pre></td></tr></table></figure>
+<h1 id="在Master中生成密钥"><a href="#在Master中生成密钥" class="headerlink" title="在Master中生成密钥"></a>在Master中生成密钥</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t dsa -P <span class="string">" -f ~/.ssh/id_dsa"</span></span><br></pre></td></tr></table></figure>
+<h1 id="查看生成的公钥与私钥"><a href="#查看生成的公钥与私钥" class="headerlink" title="查看生成的公钥与私钥"></a>查看生成的公钥与私钥</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./ssh </span><br><span class="line">ls</span><br><span class="line">// 说明：会出现如下两个文件 id_dsa  id_dsa.pub</span><br></pre></td></tr></table></figure>
 <h1 id="无密码登录"><a href="#无密码登录" class="headerlink" title="无密码登录"></a>无密码登录</h1><p>我们希望Master结点不需要密码就能使用ssh连接到Worker结点，我们需要将Master结点上的~/.ssh/id_dsa.pub的内容，添加到Worker结点的~/.ssh/authorized_keys这个文件中。</p>
-<h1 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h1><p>如果Worker结点的~/.ssh/authorized_keys这个文件不存在，可以直接将~/.ssh/id_dsa.pub文件复制过去并重命名为authorized_keys：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp ~/.ssh/id_dsa.pub ragawa@192.168.10.130:~/.ssh/authorized_keys</div></pre></td></tr></table></figure></p>
-<p>或者也可以先将Master结点的~/.ssh/id_dsa.pub文件复制到Worker结点的~/.ssh/目录下，然后在Worker结点上执行下面的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scp ~/.ssh/id_dsa.pub ragawa@Worker1:~/.ssh</div><div class="line">cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys(在Worker上执行)</div></pre></td></tr></table></figure></p>
-<h1 id="验证无密码登录"><a href="#验证无密码登录" class="headerlink" title="验证无密码登录"></a>验证无密码登录</h1><p>最后，我们验证是否可以无密码登陆：在Master结点上使用ssh连接Worker结点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh ragawa@Worker1</div></pre></td></tr></table></figure></p>
+<h1 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h1><p>如果Worker结点的~/.ssh/authorized_keys这个文件不存在，可以直接将~/.ssh/id_dsa.pub文件复制过去并重命名为authorized_keys：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_dsa.pub ragawa@192.168.10.130:~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
+<p>或者也可以先将Master结点的~/.ssh/id_dsa.pub文件复制到Worker结点的~/.ssh/目录下，然后在Worker结点上执行下面的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_dsa.pub ragawa@Worker1:~/.ssh</span><br><span class="line">cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys(在Worker上执行)</span><br></pre></td></tr></table></figure></p>
+<h1 id="验证无密码登录"><a href="#验证无密码登录" class="headerlink" title="验证无密码登录"></a>验证无密码登录</h1><p>最后，我们验证是否可以无密码登陆：在Master结点上使用ssh连接Worker结点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh ragawa@Worker1</span><br></pre></td></tr></table></figure></p>
 <p>今天先把最基本的SSH安装记录下来，未完待续哟(ง •̀_•́)ง</p>
 
       
@@ -587,9 +587,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/favicon/ragawa.png"
-                alt="Ragawa"/>
+              <img class="site-author-image" itemprop="image" src="/favicon/ragawa.png" alt="Ragawa">
             
               <p class="site-author-name" itemprop="name">Ragawa</p>
               <p class="site-description motion-element" itemprop="description">一个可以承载记忆的地方</p>
@@ -602,7 +600,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -655,7 +653,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -708,7 +710,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -784,7 +794,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-usersnowflake-o"></i>
   </span>
@@ -796,7 +806,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.3.9</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 
